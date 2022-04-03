@@ -10,7 +10,7 @@ export const obj = {
     count: 0,
  //   counter() { this.count++ },
     subscribe() {
-       count++; 
+       this.count++; 
        EventEmitter.on('click', this.counter)
     },
     unsubscribe() {
