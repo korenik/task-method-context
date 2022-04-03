@@ -11,10 +11,10 @@ export const obj = {
  //   counter() { this.count++ },
     subscribe() {
        this.count++; 
-       EventEmitter.on('click', this.counter)
+       EventEmitter.on('click', this.count);
     },
     unsubscribe() {
-       EventEmitter.off('click', this.counter) 
+       EventEmitter.off('click', this.count) 
     },
 };
 
