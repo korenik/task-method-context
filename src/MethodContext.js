@@ -8,8 +8,13 @@ import { EventEmitter } from './EventEmitter';
  */
 export const obj = {
     count: 0,
-    subscribe() {},
-    unsubscribe() {},
+    handle() { this.count++ },
+    subscribe() {
+       EventEmitter.on('click', this.handle);
+    },
+    unsubscribe() {
+       EventEmitter.off('click', this.handle) 
+    },
 };
 
 /*
@@ -19,8 +24,10 @@ obj1.first(1, 2, 3);
 // Внутренний вызов должен быть равносилен obj1.second(3, 2, 1)
  */
 export const obj1 = {
-    first(...args) {},
-    second() {
-        // здесь ничего писать не нужно
-    },
+    first(...args) {
+        obj1.second.reverse; 
+     },
+     second() {
+         // здесь ничего писать не нужно
+     },
 };
