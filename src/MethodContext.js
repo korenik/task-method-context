@@ -8,8 +8,9 @@ import { EventEmitter } from './EventEmitter';
  */
 export const obj = {
     count: 0,
-    counter() { this.count++ },
+ //   counter() { this.count++ },
     subscribe() {
+       count++; 
        EventEmitter.on('click', this.counter)
     },
     unsubscribe() {
