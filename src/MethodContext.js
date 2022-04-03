@@ -8,12 +8,12 @@ import { EventEmitter } from './EventEmitter';
  */
 export const obj = {
     count: 0,
-    counter() { this.count++ },
+    handle() { this.count++ },
     subscribe() {
-       EventEmitter.on('click', counter);
+       EventEmitter.on('click', this.handle);
     },
     unsubscribe() {
-       EventEmitter.off('click', counter) 
+       EventEmitter.off('click', this.handle) 
     },
 };
 
